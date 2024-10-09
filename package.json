@@ -1,0 +1,27 @@
+{
+  "name": "react-91",
+  "version": "1.0.0",
+  "description": "This is React Revision By Nihal Sandhu",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nihalsandhu09/ReactByNihalSandhu.git"
+  },
+  "keywords": [
+    "React",
+    "nihal",
+    "Sandhu"
+  ],
+  "author": "Nihal Sandhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nihalsandhu09/ReactByNihalSandhu/issues"
+  },
+  "homepage": "https://github.com/nihalsandhu09/ReactByNihalSandhu#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
