@@ -1,5 +1,11 @@
 /**
- *
+ * // React Element = > Object > render > Htmlelement
+
+const heading = React.createElement("h1", { id: "heading" }, "This is h1 tag ");
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
+
  *
  *   <div id = "Parent">
  *      <div id = "Child">
@@ -17,18 +23,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "Parent" }, [
-  React.createElement("div", { id: "Child" }, [
-    React.createElement("h1", {}, "Hi i am Nihal sand"),
-    React.createElement("h2", {}, " i am h2 Tag"),
-  ]),
-  React.createElement("div", { id: "Child2" }, [
-    React.createElement("h1", {}, " i am h1 Tag"),
-    React.createElement("h2", {}, " i am h2 Tag"),
-  ]),
-]);
-
-console.log(parent);
+const jsxHeading = (
+  <h1 id="heading ">Nihal is the greart developer is there </h1>
+);
+console.log(jsxHeading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(parent);
+root.render();
