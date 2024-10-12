@@ -23,9 +23,15 @@ root.render(heading);
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const jsxHeading = (
+const TitleComponent = () => (
   <h1 id="heading ">Nihal is the greart developer is there </h1>
 );
-console.log(jsxHeading);
+
+const HeadingComponent = () => (
+  <div id="container">
+    <TitleComponent />
+    <h1> this is functional component </h1>;
+  </div>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render();
+root.render(<HeadingComponent />);
