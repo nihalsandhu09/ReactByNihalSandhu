@@ -53,6 +53,7 @@ li {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    height: 400px;
 }
 
 .res-card:hover {
@@ -65,6 +66,7 @@ li {
 .res-logo {
     width: 100%;
     border-radius: 8px;
+    height: 200px;
 }
 
 .search {
@@ -91,7 +93,7 @@ li {
     font-size: 14px;
 }
 
-p{
+p , h3{
     white-space: nowrap; /* Prevents text from spilling over */
     overflow: hidden;
     text-overflow: ellipsis; 
