@@ -6,6 +6,8 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   // state variable  - local state -  super powerfull variable
   const [listofRestaurants, setListofRestaurants] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -26,6 +28,7 @@ const Body = () => {
 
     console.log(restaurants);
     setListofRestaurants(restaurants || []);
+    setFilteredRestaurant(restaurants || []);
   };
 
   return listofRestaurants.length === 0 ? (
@@ -33,6 +36,31 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Search You Want..."
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const filterRestaurant = listofRestaurants.filter((res) => {
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              setFilteredRestaurant(filterRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
+
         <button
           className="filter-btn"
           onClick={() => {
@@ -40,14 +68,14 @@ const Body = () => {
             const filterdList = listofRestaurants.filter((res) => {
               return res.info.avgRating > 4.4;
             });
-            setListofRestaurants(filterdList);
+            setFilteredRestaurant(filterdList);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-conatainer">
-        {listofRestaurants.map((restaurant) => {
+        {filteredRestaurant.map((restaurant) => {
           return (
             <ReastaurantCard key={restaurant.info.id} resData={restaurant} />
           );
