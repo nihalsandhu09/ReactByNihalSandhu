@@ -144,3 +144,32 @@ p , h3{
   /* margin: 0 200px; */
   padding: 10px;
 }
+
+.shimmer-cards{
+    width: 350px;
+   
+  
+   
+    margin: 15px;
+    border-radius: 8px;
+   
+    
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    height: 340.39px;
+    border-radius: 25px; 
+    background-color: #f0f0f0
+}
+.shimmer-container{
+    width: 87%;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+    margin: 0 auto;   
+}
+.login{
+    padding: 0 20px;
+    cursor: pointer;
+}
