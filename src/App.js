@@ -6,14 +6,15 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RestaurantMenu from "./components/RestaurantMenu";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Applayout = () => {
-  console.log(<Body></Body>);
   return (
     <div className="app">
       <Header />
-      <Body />
+      {/** if my path is / then over here we should have body if path is about thne about component oer here and if /contact then contact is ther */}
+      <Outlet />
       <Footer />
     </div>
   );
@@ -22,15 +23,25 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Applayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
+      },
+    ],
     errorElement: <Error />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

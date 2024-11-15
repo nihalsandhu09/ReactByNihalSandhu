@@ -27,7 +27,7 @@
     background: #fff;
 }
 
-ul {
+.nav-items >ul {
     display: flex;
     gap: 40px;
 }
