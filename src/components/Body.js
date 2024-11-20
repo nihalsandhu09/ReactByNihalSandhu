@@ -2,7 +2,7 @@ import ReastaurantCard from "./RestaurantCard";
 
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 const Body = () => {
   // state variable  - local state -  super powerfull variable
   const [listofRestaurants, setListofRestaurants] = useState([]);
@@ -26,7 +26,7 @@ const Body = () => {
           Array.isArray(restaurantArray) && restaurantArray.length > 0
       );
 
-    console.log(restaurants);
+    // console.log(restaurants);
     setListofRestaurants(restaurants || []);
     setFilteredRestaurant(restaurants || []);
   };
@@ -77,7 +77,13 @@ const Body = () => {
       <div className="res-conatainer">
         {filteredRestaurant.map((restaurant) => {
           return (
-            <ReastaurantCard key={restaurant.info.id} resData={restaurant} />
+            <Link
+              className="restaurants"
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}
+            >
+              <ReastaurantCard resData={restaurant} />
+            </Link>
           );
         })}
       </div>

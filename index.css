@@ -195,3 +195,15 @@ p , h3{
     padding: 0 20px;
     cursor: pointer;
 }
+.nav-item{
+    color: black;
+    text-decoration: none;
+}
+.restaurants{
+    color: black;
+    text-decoration: none;
+}
+.user-Card{
+    padding: 10px;
+    border: 1px solid black;
+}
