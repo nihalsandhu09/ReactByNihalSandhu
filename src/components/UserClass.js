@@ -17,12 +17,16 @@ class UserClass extends React.Component {
     this.setState({
       userInfo: json,
     });
+    this.Interval = setInterval(() => {
+      console.log("namsate React op");
+    }, 1000);
   }
   componentDidUpdate() {
     console.log("ComponentDIdUpdate");
   }
-  componentWillUnmount() {
+  componentWillUnmount(prevProps, prevState) {
     console.log("unmount");
+    clearInterval(this.Interval);
   }
   render() {
     const { name, location, avatar_url } = this.state.userInfo;

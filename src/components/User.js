@@ -3,7 +3,16 @@ const User = (props) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(1);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("namsate React op");
+    }, 1000);
+    // this function is called when unmounting it
+    return () => {
+      clearInterval(timer);
+      console.log("useEfeect return unmount ");
+    };
+  }, []);
 
   return (
     <div className="user-Card">
