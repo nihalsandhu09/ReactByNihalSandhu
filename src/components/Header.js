@@ -28,7 +28,11 @@ const Header = () => {
             </Link>
           </li>
           <li>Cart</li>
-          <li>onlineStatus :{onlinestatus ? "✅" : "🔴"}</li>
+          <Link className="nav-item" to="/grocery">
+            {" "}
+            <li>Groccery</li>{" "}
+          </Link>
+          <li>{onlinestatus ? "✅" : "🔴"}</li>
           <button
             className="login"
             onClick={() => {
