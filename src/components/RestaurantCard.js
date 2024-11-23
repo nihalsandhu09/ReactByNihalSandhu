@@ -16,16 +16,16 @@ const ReastaurantCard = (props) => {
     <div className="res-card">
       <div className="card-logo">
         <img
-          className="res-logo"
+          className="w-1/2"
           src={CDN_URL + cloudinaryImageId}
           alt="meghana-logo"
         />
       </div>
-      <div className="res-text">
+      <div className="res-text mx-1">
         <h3> {name} </h3>
 
-        <div className="rating_min ">
-          <div className="rating">
+        <div className="rating_min flex gap-1 items-center ">
+          <div className="rating flex items-center gap-1">
             <svg
               className="bold"
               width="20"
