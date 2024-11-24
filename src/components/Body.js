@@ -40,7 +40,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="flex gap-3 w-4/5 m-auto ">
+      <div className="flex gap-3 w-2/4 m-auto text-center">
         <div className="flex w-96 text-center border-black">
           <input
             className="w-72 border-none outline-none"
@@ -79,7 +79,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="grid grid-cols-4  gap-3">
+      <div className="grid grid-cols-4  gap-8 w-3/4 m-auto my-5">
         {filteredRestaurant.map((restaurant) => {
           return (
             <Link

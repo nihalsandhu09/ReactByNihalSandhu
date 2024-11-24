@@ -30,7 +30,7 @@ const RestaurantMenu = () => {
     <div className="menu">
       <h1>{name}</h1>
       <h2>{cuisines}</h2>
-      <h2>{costForTwoMessage}</h2>
+      <h2>{costForTwoMessage / 100}</h2>
       <h2>{avgRating}</h2>
 
       <h1> Menu</h1>

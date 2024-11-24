@@ -13,16 +13,16 @@ const ReastaurantCard = (props) => {
   const { deliveryTime } = resData?.info?.sla;
 
   return (
-    <div className="res-card">
+    <div className="res-card ">
       <div className="card-logo">
         <img
-          className="w-1/2"
+          className="w-96 h-56 object-cover border rounded-2xl "
           src={CDN_URL + cloudinaryImageId}
           alt="meghana-logo"
         />
       </div>
-      <div className="res-text mx-1">
-        <h3> {name} </h3>
+      <div className="res-text mx-3 my-2">
+        <h3 className="font-bold text-lg"> {name.slice(0, 25)} </h3>
 
         <div className="rating_min flex gap-1 items-center ">
           <div className="rating flex items-center gap-1">
@@ -71,7 +71,10 @@ const ReastaurantCard = (props) => {
           <p className="bold">{deliveryTime + " " + "min"} </p>
         </div>
         <p className="light ">{costForTwo}</p>
-        <p className="light"> {cuisines.join(" , ")}</p>
+        <p className="light text-wrap opacity-75 font-medium">
+          {" "}
+          {cuisines.slice(0, 3).join(" , ")}
+        </p>
       </div>
     </div>
   );
