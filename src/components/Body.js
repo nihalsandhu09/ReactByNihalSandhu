@@ -52,7 +52,7 @@ const Body = () => {
             }}
           />
           <button
-            className="border rounded bg-white border-2px px-3 py-1 font-medium"
+            className="border rounded-lg bg-white border-2px px-3 py-1 font-medium"
             onClick={() => {
               const filterRestaurant = listofRestaurants.filter((res) => {
                 return res.info.name
@@ -67,7 +67,7 @@ const Body = () => {
         </div>
 
         <button
-          className="border rounded bg-white border-2px px-1 py-1 font-medium"
+          className="border rounded-lg bg-white border-2px px-1 py-1 font-medium"
           onClick={() => {
             //    Filter logic here
             const filterdList = listofRestaurants.filter((res) => {
