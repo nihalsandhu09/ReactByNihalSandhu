@@ -1,6 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 
-const ReastaurantCard = (props) => {
+const RestaurantCard = (props) => {
   const { resData } = props;
   const {
     cloudinaryImageId,
@@ -62,16 +62,16 @@ const ReastaurantCard = (props) => {
               </defs>
             </svg>
 
-            <p className="bold">{avgRating}</p>
+            <p className="bold font-medium">{avgRating}</p>
           </div>
           <span className="dot">
             {" "}
             <sup className="bold">.</sup>{" "}
           </span>
-          <p className="bold">{deliveryTime + " " + "min"} </p>
+          <p className="bold font-medium">{deliveryTime + " " + "min"} </p>
         </div>
-        <p className="light ">{costForTwo}</p>
-        <p className="light text-wrap opacity-75 font-medium">
+        <p className="light font-medium opacity-60 ">{costForTwo}</p>
+        <p className="light text-wrap opacity-60 font-medium">
           {" "}
           {cuisines.slice(0, 3).join(" , ")}
         </p>
@@ -80,4 +80,4 @@ const ReastaurantCard = (props) => {
   );
 };
 
-export default ReastaurantCard;
+export default RestaurantCard;
