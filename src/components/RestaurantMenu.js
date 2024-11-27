@@ -2,6 +2,8 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurant";
 import { CDN_URL } from "../utils/constants";
+import RestaurantCatogry from "./RestaurantCatogry";
+
 // import { MENU_API } from "../utils/constants";
 
 const RestaurantMenu = () => {
@@ -27,24 +29,54 @@ const RestaurantMenu = () => {
     /** */
   }
 
+  const categories = resInfo?.cards
+    ?.find((card) =>
+      card.groupedCard?.cardGroupMap?.REGULAR.cards.some(
+        (c) =>
+          c.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      )
+    )
+    ?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
+  console.log(categories);
   // console.log(itemCards);
 
   return (
-    <div className=" w-2/5 m-auto">
+    <div className=" w-2/5 m-auto w">
       <h1 className="text-3xl font-bold">{name}</h1>
-      <div className=" border py-4 px-4 mt-4 rounded-2xl shadow-2xl ">
+      <div className=" border py-4 px-6 mt-4 rounded-2xl shadow-2xl ">
         <div className="flex items-center gap-3 ">
-          <h2 className="text-lg font-semibold">{"✳" + "  " + avgRating}</h2>
+          <h2 className="text-lg font-semibold ">{"✳" + "  " + avgRating}</h2>
           <p>-</p>
           <h2 className="text-lg font-bold">{costForTwoMessage}</h2>
         </div>
 
-        <h2 className="text-lg font-medium opacity-60">{cuisines.join(",")}</h2>
+        <h2 className="text-sm font-medium opacity-60 mt-2">
+          {cuisines.join(",")}
+        </h2>
       </div>
 
       <h1 className="text-3xl mt-12 font-bold"> Menu</h1>
-      <ul>
-        {itemCards.map((item) => {
+      {Array.isArray(categories) && categories.length > 0 ? (
+        categories.map((category) => {
+          return (
+            <RestaurantCatogry
+              key={category?.card?.card?.title}
+              data={category?.card?.card}
+            />
+          );
+        })
+      ) : (
+        <p>No categories available</p>
+      )}
+
+      {/* <ul>
+        {/* {itemCards.map((item) => {
           const { name, price, description, defaultPrice, imageId } =
             item?.card?.info || {};
           const { rating, ratingCount } =
@@ -68,9 +100,9 @@ const RestaurantMenu = () => {
                     {item?.card?.info?.description.slice(0, 100)}
                   </p>
                 </div>
-                <div className="w-3/12">
+                <div className="w-3/12 ">
                   <img
-                    className="rounded-xl"
+                    className="rounded-xl w-40 h-40"
                     src={CDN_URL + item?.card?.info?.imageId}
                   />
                 </div>
@@ -78,8 +110,8 @@ const RestaurantMenu = () => {
               <hr className="mt-10"></hr>
             </div>
           );
-        })}
-      </ul>
+        })} }
+      </ul> */}
     </div>
   );
 };

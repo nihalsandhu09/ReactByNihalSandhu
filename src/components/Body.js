@@ -10,6 +10,8 @@ const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
   console.log(listofRestaurants);
 
   useEffect(() => {
@@ -42,8 +44,8 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="flex gap-3 w-2/4 m-auto text-center">
-        <div className="flex w-96  border border-gray-400 rounded-xl px-1">
+      <div className="flex flex-wrap  gap-3 w-2/4 m-auto text-center">
+        <div className="flex w-full sm:w-96  border border-gray-400 rounded-xl px-1">
           <input
             className="w-full border-none outline-none px-2"
             type="text"
@@ -81,7 +83,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="grid grid-cols-4  gap-8 w-3/4 m-auto my-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4  gap-8 w-3/4 m-auto my-5">
         {filteredRestaurant.map((restaurant) => {
           return (
             <Link
@@ -89,7 +91,11 @@ const Body = () => {
               key={restaurant.info.id}
               to={"/restaurants/" + restaurant.info.id}
             >
-              <RestaurantCard resData={restaurant} />
+              {restaurant.info.promoted ? (
+                <RestaurantCardPromoted resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )}
             </Link>
           );
         })}

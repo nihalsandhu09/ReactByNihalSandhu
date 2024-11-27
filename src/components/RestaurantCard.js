@@ -16,7 +16,7 @@ const RestaurantCard = (props) => {
     <div className="res-card  ">
       <div className="card-logo">
         <img
-          className="w-96 h-56 object-cover border rounded-2xl "
+          className="w-full h-40 object-cover border rounded-2xl "
           src={CDN_URL + cloudinaryImageId}
           alt="meghana-logo"
         />
@@ -78,6 +78,22 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+// Higher Order Component
+// input - RestaurantCard =>>> output RestaurantCardPromoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
