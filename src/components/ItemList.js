@@ -1,9 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 
-const ItemList = (props) => {
-  console.log(props);
-  const { items } = props;
-  console.log("Itemslist", items);
+const ItemList = ({ items, dummy }) => {
+  console.log("Itemslist", items, dummy);
   return (
     <div>
       {items.map((item) => {
@@ -23,7 +21,7 @@ const ItemList = (props) => {
                   </h5>
                 </div>
                 <p className=" opacity-35 font-semibold text-sm mt-4">
-                  {item?.card?.info?.description.slice(0, 100)}
+                  {item?.card?.info?.description}
                 </p>
               </div>
               <div className="w-3/12 relative ">

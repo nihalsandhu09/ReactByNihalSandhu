@@ -1,20 +1,26 @@
 import ItemList from "./ItemList";
 import { useState } from "react";
-const RestaurantCatogry = ({ data }) => {
-  console.log("data of restaurantCategory", data);
-  const [isOpen, setIsopen] = useState(false);
 
+const RestaurantCatogry = ({ data, showItems, setShowIndex, dummy }) => {
+  console.log("data of restaurantCategory", data);
+
+  const handleClick = () => {
+    setShowIndex();
+  };
   return (
     <div>
       {/* {header} */}
       <div className="  w-full  my-5 shadow-lg p-4">
-        <div className=" flex justify-between">
+        <div
+          className=" flex justify-between cursor-pointer "
+          onClick={handleClick}
+        >
           <span className="text-lg font-bold">
             {data.title}({data.itemCards.length})
           </span>
-          <span> 🔽</span>
+          <span className=" cursor-pointer"> 🔽</span>
         </div>
-        <ItemList items={data.itemCards} />
+        {showItems && <ItemList items={data.itemCards} dummy={dummy} />}
       </div>
       {/* {Accordian Body} */}
     </div>
