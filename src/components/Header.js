@@ -10,7 +10,7 @@ const Header = () => {
   const { loggedInUser } = useContext(userContext);
   console.log(loggedInUser);
   return (
-    <div className="flex justify-between items-center w-4/6 m-auto">
+    <div className="flex justify-between items-center w-full lg:w-4/6 m-auto ">
       <div className="logo-container">
         <img className="w-24" src={LOGO_URL} />
       </div>
@@ -22,12 +22,8 @@ const Header = () => {
       >
         {isMenuOpen ? "✖" : "☰"}
       </button>
-      <div
-        className={`${
-          isMenuOpen ? "flex" : "hidden"
-        } flex-col lg:flex lg:flex-row lg:gap-6 gap-4 absolute lg:static top-16 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none p-4 lg:p-0`}
-      >
-        <ul className="flex gap-6 opacity-70">
+      <div>
+        <ul className="flex gap-6 opacity-2">
           <li className="text-lg font-medium">
             <Link className="nav-item" to="/">
               Home
@@ -43,7 +39,7 @@ const Header = () => {
               Contact US
             </Link>
           </li>
-          <li className="text-lg font-medium">Cart</li>{" "}
+          <li className="text-lg font-medium cursor-pointer">Cart</li>{" "}
           <li className="text-lg font-medium">
             <Link className="nav-item" to="/grocery">
               Groccery{" "}

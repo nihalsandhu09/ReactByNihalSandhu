@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
+import userContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -11,12 +13,12 @@ const RestaurantCard = (props) => {
     costForTwo,
   } = resData?.info;
   const { deliveryTime } = resData?.info?.sla;
-
+  const { loggedInUser } = useContext(userContext);
   return (
     <div className="res-card  ">
       <div className="card-logo">
         <img
-          className="w-full h-40 object-cover border rounded-2xl "
+          className="w-full lg:h-56 object-cover border rounded-2xl "
           src={CDN_URL + cloudinaryImageId}
           alt="meghana-logo"
         />
@@ -75,6 +77,7 @@ const RestaurantCard = (props) => {
           {" "}
           {cuisines.slice(0, 3).join(" , ")}
         </p>
+        <h1>User:{loggedInUser}</h1>
       </div>
     </div>
   );
@@ -87,7 +90,7 @@ export const withPromotedLabel = (RestaurantCard) => {
   return (props) => {
     return (
       <div>
-        <label className="absolute bg-black text-white m-2 p-2 rounded">
+        <label className="absolute bg-slate-700 text-white m-2 p-2 rounded">
           Promoted
         </label>
         <RestaurantCard {...props} />

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
-
+import userContext from "./utils/UserContext";
 // import Grocery from "./components/Grocery";
 
 // Chunking
@@ -26,13 +26,26 @@ const About = lazy(() => {
   return import("./components/About");
 });
 const Applayout = () => {
+  // authentication
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    // authentication make api call and send username and password
+    const data = {
+      name: "nihal sandhu",
+    };
+    setUserName(data.name);
+  }, []);
   return (
-    <div className="app">
-      <Header />
-      {/** if my path is / then over here we should have body if path is about thne about component oer here and if /contact then contact is ther */}
-      <Outlet />
-      <Footer />
-    </div>
+    <userContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+
+        {/** if my path is / then over here we should have body if path is about thne about component oer here and if /contact then contact is ther */}
+        <Outlet />
+        <Footer />
+      </div>
+    </userContext.Provider>
   );
 };
 const appRouter = createBrowserRouter([

@@ -38,7 +38,7 @@ const RestaurantMenu = () => {
   // console.log(itemCards);
 
   return (
-    <div className=" w-2/5 m-auto w">
+    <div className=" w-full lg:w-2/5 m-auto ">
       <h1 className="text-3xl font-bold mt-7">{name}</h1>
       <div className=" border py-4 px-6 mt-4 rounded-2xl shadow-2xl ">
         <div className="flex items-center gap-3 ">

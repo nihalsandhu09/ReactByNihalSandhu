@@ -10,7 +10,7 @@ const RestaurantCatogry = ({ data, showItems, setShowIndex, dummy }) => {
   return (
     <div>
       {/* {header} */}
-      <div className="  w-full  my-5 shadow-lg p-4">
+      <div className=" my-5 shadow-lg p-4  ">
         <div
           className=" flex justify-between cursor-pointer "
           onClick={handleClick}

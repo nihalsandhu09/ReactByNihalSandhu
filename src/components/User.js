@@ -4,13 +4,13 @@ const User = (props) => {
   const [count2, setCount2] = useState(1);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      console.log("namsate React op");
-    }, 1000);
+    // const timer = setInterval(() => {
+    // console.log("namsate React op");
+    // }, 1000);
     // this function is called when unmounting it
     return () => {
-      clearInterval(timer);
-      console.log("useEfeect return unmount ");
+      // clearInterval(timer);
+      // console.log("useEfeect return unmount ");
     };
   }, []);
 
