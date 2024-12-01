@@ -16,6 +16,9 @@ class About extends React.Component {
           <userContext.Consumer>
             {({ loggedInUser }) => <h1>{loggedInUser}</h1>}
           </userContext.Consumer>
+          <userContext.Consumer>
+            {({ loggedInUser }) => <h1>{loggedInUser}</h1>}
+          </userContext.Consumer>
         </div>
         <h2>This is About Class component </h2>
         <User name={"Nihal Sandhu (functional)"} />
