@@ -1,7 +1,9 @@
 import { CDN_URL } from "../utils/constants";
-
+import { useCallback, useContext } from "react";
+import userContext from "../utils/UserContext";
 const ItemList = ({ items, dummy }) => {
   console.log("Itemslist", items, dummy);
+  const { loggedInUser } = useContext(userContext);
   return (
     <div>
       {items.map((item) => {
@@ -34,6 +36,7 @@ const ItemList = ({ items, dummy }) => {
                 </button>
               </div>
             </div>
+            <div>{loggedInUser}</div>
             <hr className="mt-10"></hr>
           </div>
         );
