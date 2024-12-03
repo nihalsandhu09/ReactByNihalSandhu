@@ -49,3 +49,17 @@ import {Component} from "path"
 
 - useState() superpowerfull sate variable in react
 - useEffect()
+
+# 2 types Routing in web apps
+
+- Client Side Routing
+- Server Side Routing
+
+# Redux Tool Kit
+
+- install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect Our Store to our App
+- Slice (cartSlice)
+- dispatch(action)
+- Selector(Read Data )

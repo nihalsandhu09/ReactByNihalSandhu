@@ -10,6 +10,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
 import userContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 // import Grocery from "./components/Grocery";
 
 // Chunking
@@ -36,16 +39,19 @@ const Applayout = () => {
     };
     setUserName(data.name);
   }, []);
-  return (
-    <userContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
 
-        {/** if my path is / then over here we should have body if path is about thne about component oer here and if /contact then contact is ther */}
-        <Outlet />
-        <Footer />
-      </div>
-    </userContext.Provider>
+  return (
+    <Provider store={appStore}>
+      <userContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+
+          {/** if my path is / then over here we should have body if path is about thne about component oer here and if /contact then contact is ther */}
+          <Outlet />
+          <Footer />
+        </div>
+      </userContext.Provider>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([
@@ -80,6 +86,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,
