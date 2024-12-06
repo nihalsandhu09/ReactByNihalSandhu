@@ -3,8 +3,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/UserContext";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { logOut } from "../utils/authSlice";
 const Header = () => {
   const [btnName, setbtnName] = useState("login");
   const [isMenuOpen, setIsMenu] = useState(false);
@@ -16,6 +16,13 @@ const Header = () => {
 
   const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
+  const dispatch = useDispatch();
+
+  const { isLoggedIn, user } = useSelector((store) => store.auth);
+
+  const handleLogOut = () => {
+    dispatch(logOut());
+  };
 
   return (
     <div className="flex justify-between items-center w-full lg:w-4/6 m-auto ">
@@ -54,17 +61,20 @@ const Header = () => {
             <Link className="nav-item" to="/grocery">
               Groccery{" "}
             </Link>
-          </li>{" "}
+          </li>
+          <li className="text-lg font-medium">
+            {isLoggedIn ? (
+              <span className="cursor-pointer" onClick={handleLogOut}>
+                Log Out
+              </span>
+            ) : (
+              <Link className="nav-item" to="/login">
+                Log In
+              </Link>
+            )}
+          </li>
           <li className="text-lg font-medium">{onlinestatus ? "✅" : "🔴"}</li>
-          <button
-            className="login text-lg font-medium"
-            onClick={() => {
-              btnName === "login" ? setbtnName("logOut") : setbtnName("login");
-            }}
-          >
-            {btnName}
-          </button>
-          <li className="text-lg font-medium">{loggedInUser}</li>
+          <li className="text-lg font-medium">welcome , {user}</li>
         </ul>{" "}
       </div>
     </div>

@@ -13,6 +13,8 @@ import userContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import LogIn from "./components/LogIn";
+import LogOut from "./components/LogOut";
 // import Grocery from "./components/Grocery";
 
 // Chunking
@@ -90,6 +92,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
+      {
+        path: "/logout",
+        element: <LogOut />,
       },
     ],
     errorElement: <Error />,
