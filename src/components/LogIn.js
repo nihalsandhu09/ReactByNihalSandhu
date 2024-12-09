@@ -34,17 +34,17 @@ const LogIn = () => {
           </button>
         </div>
       ) : (
-        <>
-          <h2>Welcome , {userName}</h2>
-          <p>
+        <div className="w-2/4 m-auto">
+          <h2 className="font-bold text-lg">Welcome , {userName}</h2>
+          <p className="font-medium">
             {" "}
-            Time For Order Delecious Food{" "}
+            Time For Order Delecious Food ,{" "}
             <span className="border bg-blue-400 text-white font-bold px-2 py-1 rounded-md ">
               {" "}
-              <Link to="/"> Find Restaurant</Link>
+              <Link to="/"> Find Restaurant </Link>
             </span>{" "}
           </p>
-        </>
+        </div>
       )}
     </div>
   );

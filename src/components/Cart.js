@@ -19,20 +19,14 @@ const Cart = () => {
     }, 0) / 100;
   return (
     <div className="   w-full bg-gray-200 h-full">
-      <h1 className="text-xl font-bold"> Cart</h1>
-      <button
-        className=" border bg-blue-500 p-2 rounded text-white font-bold"
-        onClick={handleClearCart}
-      >
-        Clear Cart
-      </button>
+      <h1 className="text-xl font-bold "> Cart</h1>
 
       {cartItems.length === 0 && <h1>Cart is Empty Add items to the Cart</h1>}
-      <div className="w-1/2 m-auto bg-white p-2">
+      <div className="w-1/2 m-auto bg-white p-2 rounded-lg">
         {cartItems.map((item) => {
           return (
             <div className="parent   " key={item?.card?.info?.id}>
-              <div className="flex gap-10 mt-8 ">
+              <div className="flex gap-10 mt-8  justify-between">
                 <div className="  ">
                   <h1 className="text font-bold text-gray-800">
                     {" "}
@@ -64,7 +58,7 @@ const Cart = () => {
         })}
       </div>
 
-      <div className=" w-1/2 bg-white m-auto px-1  mt-2 p-4">
+      <div className=" w-1/2 bg-white m-auto px-1  mt-2 p-4 rounded-lg">
         <div className="flex justify-between ">
           <h6 className="font-bold"> Total Items</h6>
           <h6 className="font-medium">{cartItems.length}</h6>
@@ -75,6 +69,12 @@ const Cart = () => {
           <h6 className="font-medium"> {totalprice}</h6>
         </div>
       </div>
+      <button
+        className=" border bg-blue-500 p-2 rounded text-white font-bold w-32  "
+        onClick={handleClearCart}
+      >
+        Clear Cart
+      </button>
     </div>
   );
 };

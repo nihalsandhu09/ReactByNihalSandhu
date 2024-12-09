@@ -74,7 +74,9 @@ const Header = () => {
             )}
           </li>
           <li className="text-lg font-medium">{onlinestatus ? "✅" : "🔴"}</li>
-          <li className="text-lg font-medium">welcome , {user}</li>
+          <li className="text-lg font-medium">
+            {isLoggedIn ? <span>welcome , {user}</span> : <p></p>}
+          </li>
         </ul>{" "}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -7,14 +7,17 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      // mutating the state here
+      // mutating the state here Redux toolkit uses immer behind the scene
       state.items.push(action.payload);
     },
     removeItem: (state) => {
       state.items.pop();
     },
     clearCart: (state) => {
-      state.items.length = 0;
+      console.log("state of slice ", current(state));
+      state.items.length = 0; // state = []
+      // state = [];
+      // return [];
     },
   },
 });
