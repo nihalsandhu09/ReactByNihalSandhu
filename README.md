@@ -63,3 +63,17 @@ import {Component} from "path"
 - Slice (cartSlice)
 - dispatch(action)
 - Selector(Read Data )
+
+# types of testing (developers can do )
+
+- unit Testing you test your react comnponnet in isolation
+- Intergration Testing -- testing the intigration of components
+- End to End Testing - e2e testing testing the application at when user landing on page and when leave how the user will flow across the app
+
+  # setting up Testing in our app
+
+  Install React Testing Library
+  install Jest
+  install babel dependicies
+  Configure Babel
+  Configure Parcel Config file to use disable default babel transpilation
