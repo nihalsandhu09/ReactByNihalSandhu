@@ -77,3 +77,9 @@ import {Component} from "path"
   install babel dependicies
   Configure Babel
   Configure Parcel Config file to use disable default babel transpilation
+  Jest Configuration npx jest --init
+  Install jsdom library
+  insta;; @babel/preset-react - to make jsx work in test cases
+  include @babel/preset-react add it to out babel.config
+  npm install -D @testing-library/jest-dom
+  \_\_ undersocre is known as dunder tests
