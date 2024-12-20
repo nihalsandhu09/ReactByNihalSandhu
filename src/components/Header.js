@@ -9,7 +9,7 @@ const Header = () => {
   const [btnName, setbtnName] = useState("login");
   const [isMenuOpen, setIsMenu] = useState(false);
   const onlinestatus = useOnlineStatus();
-  const { loggedInUser } = useContext(userContext);
+  // const { loggedInUser } = useContext(userContext);
   // console.log(loggedInUser);
 
   // subscibing to the store using a selector
