@@ -2,25 +2,34 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
-test("should Load contact us component", () => {
-  render(<Contact />);
+describe("Contact us Page Test Case", () => {
+  it("should Load contact us component", () => {
+    render(<Contact />);
 
-  const heading = screen.getByRole("heading");
-  // Assertion
-  expect(heading).toBeInTheDocument();
-});
+    const heading = screen.getByRole("heading");
+    // Assertion
+    expect(heading).toBeInTheDocument();
+  });
 
-test("shold load button inside contact component", () => {
-  render(<Contact />);
-  const button = screen.getByRole("button");
+  it("shold load button inside contact component", () => {
+    render(<Contact />);
+    const button = screen.getByRole("button");
 
-  expect(button).toBeInTheDocument();
-});
+    expect(button).toBeInTheDocument();
+  });
 
-test("shuld load input inside contact component", () => {
-  render(<Contact />);
+  it("shuld load input inside contact component", () => {
+    render(<Contact />);
 
-  const inputName = screen.getByPlaceholderText("name");
+    const inputName = screen.getByPlaceholderText("name");
 
-  expect(inputName).toBeInTheDocument();
+    expect(inputName).toBeInTheDocument();
+  });
+
+  it("should load 2 input boxes on the Contact component", () => {
+    render(<Contact />);
+    const inputBox = screen.getAllByRole("textbox");
+    expect(inputBox.length).toBe(2);
+    // Assetion
+  });
 });
