@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734862912717" clover="3.2.0">
-  <project timestamp="1734862912717" name="All files">
-    <metrics statements="39" coveredstatements="29" conditionals="8" coveredconditionals="4" methods="16" coveredmethods="7" elements="63" coveredelements="40" complexity="0" loc="39" ncloc="39" packages="2" files="9" classes="9"/>
+<coverage generated="1735207529205" clover="3.2.0">
+  <project timestamp="1735207529205" name="All files">
+    <metrics statements="49" coveredstatements="37" conditionals="8" coveredconditionals="4" methods="19" coveredmethods="8" elements="76" coveredelements="49" complexity="0" loc="49" ncloc="49" packages="2" files="10" classes="10"/>
     <package name="components">
-      <metrics statements="16" coveredstatements="14" conditionals="8" coveredconditionals="4" methods="7" coveredmethods="5"/>
+      <metrics statements="26" coveredstatements="22" conditionals="8" coveredconditionals="4" methods="10" coveredmethods="6"/>
       <file name="Contact.js" path="C:\React-91\src\components\Contact.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -24,6 +24,19 @@
         <line num="27" count="3" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
       </file>
+      <file name="RestaurantCard.js" path="C:\React-91\src\components\RestaurantCard.js">
+        <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+      </file>
       <file name="sum.js" path="C:\React-91\src\components\sum.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -34,7 +47,7 @@
       <metrics statements="23" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="2"/>
       <file name="UserContext.js" path="C:\React-91\src\utils\UserContext.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
       </file>
       <file name="appStore.js" path="C:\React-91\src\utils\appStore.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -58,9 +71,9 @@
       </file>
       <file name="constants.js" path="C:\React-91\src\utils\constants.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
       </file>
       <file name="useOnlineStatus.js" path="C:\React-91\src\utils\useOnlineStatus.js">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
